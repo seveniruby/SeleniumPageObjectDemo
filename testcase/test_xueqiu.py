@@ -18,5 +18,8 @@ class TestXueqiu(object):
     def test_search_error(self):
         assert False==Xueqiu().search("alibaba").isInStock("小米")
 
+
+    def test_forget_password(self):
+        assert "已发送" in Xueqiu().toLogin().findByEmail("1@qq.com")
     def teardown(self):
         Driver.quit()
